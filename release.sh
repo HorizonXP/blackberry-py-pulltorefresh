@@ -19,10 +19,7 @@ blackberry-nativepackager -package bb10bootstrap-release.bar \
     bar-descriptor.xml \
     icon.png \
     app/*.pyc \
-    assets/*.qml \
-    assets/*.png \
-    assets/*.amd \
-    assets/*.js \
+    assets/ \
     -C $TART/entry $TART/entry/TartStart.so \
     -C $TART/js $TART/js/*.js \
     -C $TART/python $TART/python
