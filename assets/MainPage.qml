@@ -4,11 +4,11 @@ import "../tart.js" as Tart
 Page {
     id: page
     signal addItem(variant entry)
-    property bool showItems: true
+    property bool showLoading: true
 
     onAddItem: {
         modelGlobalStream.append(entry);
-        showItems = false;
+        showLoading = false;
     }
 
     Container {
@@ -35,6 +35,7 @@ Page {
                 onRefreshTriggered: {
                     console.log("Refresh triggered!", modelGlobalStream.size());
                     modelGlobalStream.clear();
+                    showLoading = true;
                     Tart.send('getGlobalStream');
                 }
             }
@@ -46,7 +47,7 @@ Page {
 
         ActivityIndicator {
             running: true
-            visible: page.showItems
+            visible: page.showLoading
             preferredWidth: 350
             horizontalAlignment: HorizontalAlignment.Center
             verticalAlignment: VerticalAlignment.Center
