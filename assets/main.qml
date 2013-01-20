@@ -4,8 +4,6 @@ import "../tart.js" as Tart
 NavigationPane {
     id: root
 
-    signal updateLabelText(string text)
-
     Menu.definition: AppMenuDefinition {
         id: appMenu
     }
@@ -24,17 +22,8 @@ NavigationPane {
 
         Tart.send('uiReady');
 
-        updateLabelText.connect(mainPage.updateLabelText);
         appMenu.triggerSettingsPage.connect(handleTriggerSettingsPage);
         appMenu.triggerHelpPage.connect(handleTriggerHelpPage);
-    }
-
-    onPopTransitionEnded: {
-        page.destroy()
-    }
-
-    function onMsgFromPython(data) {
-        updateLabelText(data.text);
     }
 
     function handleTriggerSettingsPage() {

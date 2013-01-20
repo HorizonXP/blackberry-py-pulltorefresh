@@ -3,4 +3,10 @@ import tart
 
 class App(tart.Application):
     def onUiReady(self):
-        tart.send('msgFromPython', text='BlackBerry-Py Bootstrap makes this look easy.')
+        pass
+
+    def onGetGlobalStream(self):
+        from PyAppDotNet.api import ApiConnection, Post
+        posts = ApiConnection.get_global_stream()
+        for post in posts:
+            print(post)

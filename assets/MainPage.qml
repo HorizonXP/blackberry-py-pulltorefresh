@@ -22,6 +22,7 @@ Page {
             leadingVisual: PullToRefresh {
                 onRefreshTriggered: {
                     console.log("Refresh triggered!");
+                    Tart.send('getGlobalStream');
                 }
             }
         }
