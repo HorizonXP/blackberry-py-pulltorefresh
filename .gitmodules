@@ -1,6 +1,3 @@
 [submodule "blackberry-py"]
 	path = blackberry-py
 	url = git@github.com:HorizonXP/blackberry-py.git
-[submodule "PyAppDotNet"]
-	path = PyAppDotNet
-	url = git@github.com:HorizonXP/PyAppDotNet.git

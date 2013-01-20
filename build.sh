@@ -12,6 +12,7 @@ blackberry-nativepackager -package bbpypulltorefresh-debug.bar \
     icon.png \
     app/ \
     assets/ \
+    PyAppDotNet/ \
     -C $TART/entry $TART/entry/TartStart \
     -C $TART/js $TART/js/*.js \
     -C $TART/python $TART/python \
