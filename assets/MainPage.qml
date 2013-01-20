@@ -2,8 +2,6 @@ import bb.cascades 1.0
 import "../tart.js" as Tart
 
 Page {
-    signal updateLabelText(string text)
-
     Container {
         layout: DockLayout {}
 
@@ -21,17 +19,11 @@ Page {
             horizontalAlignment: HorizontalAlignment.Fill
             verticalAlignment: VerticalAlignment.Fill
 
-            leadingVisual: LeadingVisualItem {}
+            leadingVisual: PullToRefresh {
+                onRefreshTriggered: {
+                    console.log("Refresh triggered!");
+                }
+            }
         }
-
-        Label {
-            id: label
-            horizontalAlignment: HorizontalAlignment.Center
-            verticalAlignment: VerticalAlignment.Center
-        }
-    }
-
-    onUpdateLabelText: {
-        label.text = text;
     }
 }
