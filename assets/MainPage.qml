@@ -2,7 +2,7 @@ import bb.cascades 1.0
 import "../tart.js" as Tart
 
 Page {
-    updateLabelText(string text)
+    signal updateLabelText(string text)
 
     Container {
         layout: DockLayout {}
