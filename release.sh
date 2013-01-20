@@ -20,6 +20,8 @@ blackberry-nativepackager -package bbpybootstrap-release.bar \
     icon.png \
     app/*.pyc \
     assets/ \
+    -e requests/requests/ requests/ \
+    adn/ \
     -C $TART/entry $TART/entry/TartStart.so \
     -C $TART/js $TART/js/*.js \
     -C $TART/python $TART/python
