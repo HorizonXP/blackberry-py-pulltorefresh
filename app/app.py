@@ -9,6 +9,14 @@ class App(tart.Application):
         from adn.adn import Adn
         app = Adn()
         stream = app.globalStream()
+        validStream = True
         for item in stream['data']:
-            item['html'] = item['html'].replace("<br>", "<br/>")
-        tart.send('receivedGlobalStream', stream=stream)
+            if 'html' in item:
+                item['html'] = item['html'].replace("<br>", "<br/>")
+                validStream = True
+            else:
+                validStream = False
+        if validStream:
+            tart.send('receivedGlobalStream', stream=stream)
+        else:
+            self.onGetGlobalStream()
