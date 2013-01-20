@@ -1,8 +1,9 @@
 import bb.cascades 1.0
 import "../tart.js" as Tart
 
-
 Page {
+    updateLabelText(string text)
+
     Container {
         layout: DockLayout {}
 
@@ -13,7 +14,7 @@ Page {
         }
     }
 
-    function onMsgFromPython(data) {
-        label.text = data.text
+    onUpdateLabelText: {
+        label.text = text;
     }
 }

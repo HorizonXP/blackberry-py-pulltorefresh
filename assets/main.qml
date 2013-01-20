@@ -4,24 +4,44 @@ import "../tart.js" as Tart
 NavigationPane {
     id: root
 
+    signal updateLabelText(string text)
+
     Menu.definition: AppMenuDefinition {
-        parentPane: root
+        id: appMenu
     }
 
-    MainPage {
-        id: mainPage
-    }
+    MainPage { id: mainPage }
+
+    attachedObjects: [
+        SettingsPage { id: settingsPage },
+        HelpPage { id: helpPage }
+    ]
 
     onCreationCompleted: {
         Tart.init(_tart, Application);
 
         Tart.register(root);
-        Tart.register(mainPage);
 
         Tart.send('uiReady');
+
+        updateLabelText.connect(mainPage.updateLabelText);
+        appMenu.connect(handleTriggerSettingsPage);
+        appMenu.connect(handleTriggerHelpPage);
     }
 
     onPopTransitionEnded: {
         page.destroy()
+    }
+
+    function onMsgFromPython(data) {
+        updateLabelText(data.text);
+    }
+
+    function handleTriggerSettingsPage() {
+        push(settingsPage);
+    }
+
+    function handleTriggerHelpPage() {
+        push(helpPage);
     }
 }
