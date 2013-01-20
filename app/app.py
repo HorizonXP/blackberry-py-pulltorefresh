@@ -8,4 +8,7 @@ class App(tart.Application):
     def onGetGlobalStream(self):
         from adn.adn import Adn
         app = Adn()
-        print(app.globalStream())
+        stream = app.globalStream()
+        for item in stream['data']:
+            item['html'] = item['html'].replace("<br>", "<br/>")
+        tart.send('receivedGlobalStream', stream=stream)

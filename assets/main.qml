@@ -3,6 +3,7 @@ import "../tart.js" as Tart
 
 NavigationPane {
     id: root
+    signal addItem(variant entry)
 
     Menu.definition: AppMenuDefinition {
         id: appMenu
@@ -24,6 +25,8 @@ NavigationPane {
 
         appMenu.triggerSettingsPage.connect(handleTriggerSettingsPage);
         appMenu.triggerHelpPage.connect(handleTriggerHelpPage);
+        root.addItem.connect(mainPage.addItem);
+        Tart.send('getGlobalStream');
     }
 
     function handleTriggerSettingsPage() {
@@ -32,5 +35,11 @@ NavigationPane {
 
     function handleTriggerHelpPage() {
         push(helpPage);
+    }
+
+    function onReceivedGlobalStream(stream) {
+        stream.stream.data.forEach(function(entry) {
+            root.addItem(entry);
+        });
     }
 }
