@@ -6,7 +6,6 @@ class App(tart.Application):
         pass
 
     def onGetGlobalStream(self):
-        from PyAppDotNet.api import ApiConnection, Post
-        posts = ApiConnection.get_global_stream()
-        for post in posts:
-            print(post)
+        from adn.adn import Adn
+        app = Adn()
+        print(app.globalStream())

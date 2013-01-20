@@ -4,3 +4,6 @@
 [submodule "adn"]
 	path = adn
 	url = git@github.com:HorizonXP/python-adn.git
+[submodule "requests"]
+	path = requests
+	url = git@github.com:HorizonXP/requests.git
