@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <qnx xmlns="http://www.qnx.com/schemas/application/1.0">
-    <id>com.your.reverse.domain.bb10bootstrap</id>
+    <id>com.your.reverse.domain.bbpy.bootstrap</id>
     <name>BB10Bootstrap</name>
     <versionNumber>0.0.1</versionNumber>
     <buildIdFile>1</buildIdFile>
-    <description>BB10Bootstrap lets you get a BB10 app up and running quickly.</description>
+    <description>BlackBerry-Py Bootstrap lets you get a Python-based BB10 app up and running quickly.</description>
     <author>YOUR_COMPANY_NAME</author>
     <authorId>YOUR_AUTHOR_ID_FROM_DEBUG_TOKEN</authorId>
     <initialWindow>
