@@ -48,9 +48,11 @@ ListItemComponent {
                     }
 
                     ImageView {
-                        imageSource: ListItemData.user.avatar_url
-                        preferredWidth: 100
-                        preferredHeight: 100
+                        imageSource: ListItemData.user.avatar_image.url
+                        preferredWidth: 200
+                        preferredHeight: 200
+                        scalingMethod: ScalingMethod.AspectFit
+                        loadEffect: ImageViewLoadEffect.FadeZoom
                     }
                 }
 
@@ -59,6 +61,8 @@ ListItemComponent {
                     layoutProperties: StackLayoutProperties {
                         spaceQuota: 8.0
                     }
+
+                    leftMargin: 25
 
                     Label {
                         text: ListItemData.user.username

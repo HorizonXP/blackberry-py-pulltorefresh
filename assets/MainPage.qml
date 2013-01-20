@@ -4,11 +4,19 @@ import "../tart.js" as Tart
 Page {
     id: page
     signal addItem(variant entry)
+    signal updateAvatarImage(int index, string url)
+
     property bool showLoading: true
 
     onAddItem: {
         modelGlobalStream.append(entry);
         showLoading = false;
+    }
+
+    onUpdateAvatarImage: {
+        var item = modelGlobalStream.value(index);
+        item.user.avatar_image.url = url;
+        modelGlobalStream.replace(index, item);
     }
 
     Container {

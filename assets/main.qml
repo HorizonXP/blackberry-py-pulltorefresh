@@ -42,4 +42,10 @@ NavigationPane {
             root.addItem(entry);
         });
     }
+
+    function onUpdateAvatarImage(avatar_image) {
+        var filename = avatar_image.avatar_image.url;
+        var index = avatar_image.avatar_image.index;
+        mainPage.updateAvatarImage(index, filename);
+    }
 }
