@@ -3,7 +3,7 @@
     <id>ca.pulsecode.bbpy.pulltorefresh</id>
     <name>Pull to Refresh ADN</name>
     <versionNumber>0.0.1</versionNumber>
-    <buildIdFile>2</buildIdFile>
+    <buildIdFile>_buildId</buildIdFile>
     <description>BlackBerry-Py sample to demonstrate pull-to-refresh of an App.net feed.</description>
     <author>YOUR_COMPANY_NAME</author>
     <authorId>YOUR_AUTHOR_ID_FROM_DEBUG_TOKEN</authorId>
