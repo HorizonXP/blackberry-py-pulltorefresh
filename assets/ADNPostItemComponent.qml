@@ -52,7 +52,7 @@ ListItemComponent {
                         preferredWidth: 200
                         preferredHeight: 200
                         scalingMethod: ScalingMethod.AspectFit
-                        loadEffect: ImageViewLoadEffect.FadeZoom
+                        loadEffect: ImageViewLoadEffect.Subtle
                     }
                 }
 
